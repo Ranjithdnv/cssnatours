@@ -1,0 +1,297 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  color: rgba(242, 8, 141, 0.4);
+}
+
+.photo {
+  height: 90vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(227, 11, 223, 0.4),
+      rgba(42, 24, 95, 0.5)
+    ),
+    url("./../img/night.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+  position: relative;
+  animation: animatebg 5s linear infinite;
+}
+
+.logo {
+  height: 35px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  height: 5rem;
+}
+
+.logo:hover {
+  animation: moveright 1s ease-out;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  text-align: center;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.heading {
+  color: aliceblue;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px;
+}
+
+.heading-prim {
+  font-size: 40px;
+  display: block;
+  letter-spacing: 35px;
+  font-weight: 800;
+  animation-name: moveleft;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-iteration-count: 3s;
+  animation-timing-function: ease-out;
+  backface-visibility: hidden;
+}
+
+.heading-sub {
+  font-size: 20px;
+  display: block;
+  font-weight: 100;
+  animation-name: moveright;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-iteration-count: 3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  80% {
+    opacity: 100;
+    transform: translateX(20px) rotate(360deg);
+  }
+  100% {
+    opacity: 100;
+    transform: translate(0) rotate(360deg);
+  }
+}
+
+@keyframes moveright {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  80% {
+    opacity: 80;
+    transform: translateX(20px);
+    /* transform: translateY(100px); */
+  }
+  100% {
+    opacity: 100;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveinbottom {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  80% {
+    opacity: 80;
+    transform: translateY(20px);
+    /* transform: translateY(100px); */
+  }
+  100% {
+    opacity: 100;
+    transform: translateY(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  padding: 20px 40px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 20px 40px rgba(43, 42, 42, 0.5);
+}
+
+.btn:active {
+  transform: translateY(-3px);
+  box-shadow: 0px 20px 40px rgba(32, 32, 32, 0.4);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  transform: scale(2);
+  opacity: 0;
+}
+
+.btn-white:hover::after {
+  background-color: rgba(175, 240, 240, 0.3);
+}
+
+.btn-animated {
+  animation: moveinbottom 2s ease-out 2s;
+  animation-fill-mode: backwards;
+}
+// .section-about {
+//   background-image: url(./../img/moon.jpg);
+// }
+.heading-secondary {
+  background-image: linear-gradient(
+    to right,
+    rgb(9, 252, 86),
+    rgb(11, 245, 124)
+  );
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  &:hover {
+    transform: skewY(4deg);
+    text-shadow: 0.5rem 1rem 2rem rgba(green, 1);
+  }
+}
+.heading-teritary {
+  font-size: 2rem;
+  font-weight: 100;
+  margin: 0.5rem;
+}
+.u-center-text {
+  text-align: center;
+}
+.distbtwtwo {
+  margin-top: 6rem;
+}
+.col-1-of-2 {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.row {
+  text-align: center;
+  padding: 10px;
+}
+.btn-textxt {
+  margin-top: 2rem;
+  border: black solid 1px;
+  text-decoration: none;
+  color: greenyellow;
+  background-color: rgb(46, 182, 39);
+  text-transform: uppercase;
+  font-size: 2rem;
+  transition: transform translateX(1rem) 1s;
+  &:hover {
+    // padding: 10rem;
+    transform: translateX(1rem);
+    // color: rgba(yellowgreen, 0.4);
+    // background-color: greenyellow;
+  }
+}
+.mooon {
+  height: 30%;
+  width: 80%;
+  background-size: cover;
+  padding: 3rem;
+  // transform: skewY(5deg);
+  animation: animatebg 1s ease;
+}
+@keyframes animatebg {
+  1% {
+    // filter: hue-rotate(360deg);
+    filter: invert(100%);
+    // filter: blur(100%);
+    // filter: contrast(100%);
+    // filter: brightness(400%);
+  }
+}
+.feature-box {
+  text-align: center;
+  background-color: #fff;
+  color: lightcoral;
+
+  border: solid 1px rgb(20, 219, 20);
+  background-color: rgba(skyblue, 0.4);
+}
+.detail {
+  margin-top: 3rem;
+  &__ddata {
+    background-color: #fff;
+    color: lightblue;
+    text-align: center;
+    transition: all 1s;
+    &:hover {
+      color: red;
+
+      // transform: skewY(4deg) scale(1.22) translateY(-1rem);
+      transform: translateY(-1rem) scale(1.2);
+      // color: transparent;
+    }
+  }
+  &-border {
+    background-color: rgba(skyblue, 0.4);
+    padding: 2rem;
+  }
+}
+.video {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-video {
+  margin-left: 100px;
+  object-fit: fill;
+  height: 50%;
+  width: 80%;
+  padding-bottom: 20px;
+}
